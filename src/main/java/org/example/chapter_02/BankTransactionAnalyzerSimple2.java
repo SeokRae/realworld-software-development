@@ -22,8 +22,7 @@ public class BankTransactionAnalyzerSimple2 {
 		// 파일 내에 모든 행을 가져온다.
 		final List<String> lines = Files.readAllLines(path);
 		double total = 0;
-
-
+		
 		for (final String line : lines) {
 			final String[] columns = line.split(",");
 			final LocalDate date = LocalDate.parse(columns[0], DATE_PATTERN);
