@@ -2,6 +2,7 @@ package org.example.chapter_02;
 
 import org.example.chapter_02.domain.BankTransaction;
 import org.example.chapter_02.parser.BankStatementCSVParser;
+import org.example.chapter_02.parser.BankStatementParser;
 import org.example.chapter_02.processor.BankStatementProcessor;
 
 import java.io.IOException;
@@ -14,13 +15,12 @@ import java.util.List;
 public class BankStatementAnalyzer {
     private static final String RESOURCES = "src/main/resources/";
 
-    public void analyze(final String fileName, final BankStatementCSVParser bankStatementParser) throws IOException {
+    public void analyze(final String fileName, final BankStatementParser bankStatementParser) throws IOException {
 
         final Path path = Paths.get(RESOURCES + fileName);
         final List<String> lines = Files.readAllLines(path);
 
-        final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFromCSV(lines);
-
+        final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFrom(lines);
         final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
 
         collectSummary(bankStatementProcessor);

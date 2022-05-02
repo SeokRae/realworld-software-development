@@ -26,7 +26,7 @@ class BankStatementCSVParserTest {
 		final List<String> lines = Files.readAllLines(path);
 
 		final BankStatementCSVParser csvParser = new BankStatementCSVParser();
-		final List<BankTransaction> bankTransactions = csvParser.parseLinesFromCSV(lines);
+		final List<BankTransaction> bankTransactions = csvParser.parseLinesFrom(lines);
 
 		assertThat(bankTransactions).isNotEmpty();
 	}
@@ -39,7 +39,7 @@ class BankStatementCSVParserTest {
 		final Path path = Paths.get(RESOURCES + "bank-data-simple.csv");
 		final List<String> lines = Files.readAllLines(path);
 
-		final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFromCSV(lines);
+		final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFrom(lines);
 
 		System.out.println("The total for all transactions is " + calculateTotalAmount(bankTransactions));
 		System.out.println("Transactions in January " + selectInMonth(bankTransactions, Month.JANUARY));
