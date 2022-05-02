@@ -5,6 +5,7 @@ import org.example.chapter_02.domain.BankTransaction;
 import java.util.List;
 
 public interface BankStatementParser {
-    BankTransaction parseFrom(String line);
-    List<BankTransaction> parseLinesFrom(List<String> lines);
+	BankTransaction parseFrom(String line);
+
+	List<BankTransaction> parseLinesFrom(List<String> lines);
 }

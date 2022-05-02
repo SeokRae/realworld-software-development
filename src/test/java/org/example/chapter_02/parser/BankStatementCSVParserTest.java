@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -43,6 +44,20 @@ class BankStatementCSVParserTest {
 
 		System.out.println("The total for all transactions is " + calculateTotalAmount(bankTransactions));
 		System.out.println("Transactions in January " + selectInMonth(bankTransactions, Month.JANUARY));
+	}
+
+	@DisplayName("값 확인 테스트")
+	@Test
+	void shouldParseOneCorrectLine() {
+		String line = "30-01-2017,-50,Tesco";
+
+		final BankStatementCSVParser csvParser = new BankStatementCSVParser();
+		BankTransaction result = csvParser.parseFrom(line);
+
+		BankTransaction expected = new BankTransaction(LocalDate.of(2017, Month.JANUARY, 30), -50, "Tesco");
+		assertThat(expected.getDate()).isEqualTo(result.getDate());
+		assertThat(expected.getAmount()).isEqualTo(result.getAmount());
+		assertThat(expected.getDescription()).isEqualTo(result.getDescription());
 	}
 
 	private double calculateTotalAmount(final List<BankTransaction> bankTransactions) {
