@@ -19,7 +19,7 @@ public class BankStatementAnalyzer {
 			final String fileName
 			, final BankStatementParser bankStatementParser
 			, final Exporter exporter
-			) throws IOException {
+	) throws IOException {
 
 		final Path path = Paths.get(RESOURCES + fileName);
 		final List<String> lines = Files.readAllLines(path);

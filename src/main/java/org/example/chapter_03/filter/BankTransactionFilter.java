@@ -4,5 +4,5 @@ import org.example.chapter_03.domain.BankTransaction;
 
 @FunctionalInterface
 public interface BankTransactionFilter {
-    boolean test(BankTransaction bankTransaction);
+	boolean test(BankTransaction bankTransaction);
 }
