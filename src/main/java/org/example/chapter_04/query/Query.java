@@ -8,10 +8,10 @@ import java.util.function.Predicate;
 
 import static java.util.stream.Collectors.toMap;
 
-class Query implements Predicate<Document> {
+public class Query implements Predicate<Document> {
 	private final Map<String, String> clauses;
 
-	static Query parse(final String query) {
+	public static Query parse(final String query) {
 		return new Query(Arrays.stream(query.split(","))
 				.map(str -> str.split(":"))
 				.collect(toMap(x -> x[0], x -> x[1])));

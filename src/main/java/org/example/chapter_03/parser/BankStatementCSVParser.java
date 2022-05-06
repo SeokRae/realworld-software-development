@@ -1,6 +1,6 @@
 package org.example.chapter_03.parser;
 
-import org.example.chapter_02.domain.BankTransaction;
+import org.example.chapter_03.domain.BankTransaction;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
