@@ -4,7 +4,7 @@ import org.example.chapter_04.domain.Document;
 import org.example.chapter_04.exception.UnknownFileTypeException;
 import org.example.chapter_04.impoter.*;
 
-import javax.management.Query;
+import org.example.chapter_04.query.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
