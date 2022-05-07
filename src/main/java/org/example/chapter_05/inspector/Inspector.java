@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 비즈니스 워크플로우에 대한 액션과 조건을 검사할 수 있는 클래스
+ */
 public class Inspector {
 
 	private final List<ConditionalAction> conditionalActionList;
