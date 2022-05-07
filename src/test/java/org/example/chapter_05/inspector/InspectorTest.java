@@ -30,7 +30,7 @@ class InspectorTest {
 
 		@Override
 		public void perform(Facts facts) {
-
+			throw new UnsupportedOperationException();
 		}
 
 		@Override

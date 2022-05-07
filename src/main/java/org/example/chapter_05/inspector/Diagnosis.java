@@ -6,7 +6,9 @@ import org.example.chapter_05.domain.Facts;
 public class Diagnosis {
 
 	private final ConditionalAction conditionalAction;
+
 	private final Facts facts;
+
 	private final boolean isPositive;
 
 	public Diagnosis(final Facts facts,
