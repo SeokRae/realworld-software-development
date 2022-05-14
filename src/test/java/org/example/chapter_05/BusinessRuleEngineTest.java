@@ -4,8 +4,12 @@ import org.example.chapter_05.condition.Condition;
 import org.example.chapter_05.domain.Facts;
 import org.example.chapter_05.domain.DefaultRule;
 import org.example.chapter_05.domain.RuleBuilder;
+import org.example.chapter_05.rule.Rule;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 class BusinessRuleEngineTest {
 
@@ -62,5 +66,25 @@ class BusinessRuleEngineTest {
 				.then(facts1 -> System.out.println("facts = " + facts1.getFact("test")));
 		businessRuleEngine.addRule(defaultRule);
 		businessRuleEngine.run();
+	}
+
+
+	@DisplayName("Mocking으로 인자 값에 대한 상호작용 검증 테스트")
+	@Test
+	void testCase4() {
+		Facts facts = mock(Facts.class);
+		DefaultRule rule = mock(DefaultRule.class);
+		BusinessRuleEngine businessRuleEngine = new BusinessRuleEngine(facts);
+
+		businessRuleEngine.addRule(rule);
+		businessRuleEngine.run();
+
+		verify(rule).perform(facts);
+	}
+
+	@DisplayName("")
+	@Test
+	void testCase5() {
+
 	}
 }
