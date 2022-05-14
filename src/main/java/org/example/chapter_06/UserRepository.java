@@ -4,14 +4,14 @@ import java.util.Optional;
 
 // tag::UserRepository[]
 public interface UserRepository extends AutoCloseable {
-    boolean add(User user);
+	boolean add(User user);
 
-    Optional<User> get(String userId);
+	Optional<User> get(String userId);
 
-    void update(User user);
+	void update(User user);
 
-    void clear();
+	void clear();
 
-    FollowStatus follow(User follower, User userToFollow);
+	FollowStatus follow(User follower, User userToFollow);
 }
 // end::UserRepository[]

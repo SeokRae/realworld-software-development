@@ -5,14 +5,14 @@ import java.util.function.Consumer;
 
 // tag::TwootRepository[]
 public interface TwootRepository {
-    Twoot add(String id, String userId, String content);
+	Twoot add(String id, String userId, String content);
 
-    Optional<Twoot> get(String id);
+	Optional<Twoot> get(String id);
 
-    void delete(Twoot twoot);
+	void delete(Twoot twoot);
 
-    void query(TwootQuery twootQuery, Consumer<Twoot> callback);
+	void query(TwootQuery twootQuery, Consumer<Twoot> callback);
 
-    void clear();
+	void clear();
 }
 // end::TwootRepository[]

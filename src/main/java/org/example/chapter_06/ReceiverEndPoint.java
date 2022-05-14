@@ -5,6 +5,6 @@ package org.example.chapter_06;
  */
 // tag::ReceiverEndPoint[]
 public interface ReceiverEndPoint {
-    void onTwoot(Twoot twoot);
+	void onTwoot(Twoot twoot);
 }
 // end::ReceiverEndPoint[]
