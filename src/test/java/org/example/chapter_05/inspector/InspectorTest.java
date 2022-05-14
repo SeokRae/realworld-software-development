@@ -22,8 +22,6 @@ class InspectorTest {
 
 		assertThat(diagnosisList).hasSize(1);
 		assertThat(diagnosisList.get(0).isPositive()).isTrue();
-
-
 	}
 
 	private static class JobTitleCondition implements ConditionalAction {
