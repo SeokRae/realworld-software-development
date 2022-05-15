@@ -5,6 +5,9 @@ import org.example.chapter_06.domain.status.FollowStatus;
 
 import java.util.Objects;
 
+/**
+ * 사용자가 시스템으로 전송한 이벤트에 대응하는 메시지를 포함한다.
+ */
 // tag::SenderEndPoint[]
 public class SenderEndPoint {
 	private final User user;

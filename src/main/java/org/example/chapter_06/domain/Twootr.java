@@ -14,6 +14,9 @@ import static org.example.chapter_06.domain.status.DeleteStatus.*;
 import static org.example.chapter_06.domain.status.FollowStatus.INVALID_USER;
 import static org.example.chapter_06.domain.Position.INITIAL_POSITION;
 
+/**
+ * 비즈니스 로직을 인스턴스화하고 시스템을 조정하는 부모 클래스
+ */
 public class Twootr {
 
 	private final TwootRepository twootRepository;

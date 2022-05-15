@@ -2,6 +2,9 @@ package org.example.chapter_06.domain;
 
 import java.util.Objects;
 
+/**
+ * 사용자가 시스템에서 발송한 하나의 메시지 인스턴스
+ */
 // Value object
 public final class Twoot {
 	private final String id;
