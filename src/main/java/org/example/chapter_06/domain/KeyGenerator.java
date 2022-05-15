@@ -1,4 +1,4 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
 
 import org.bouncycastle.crypto.generators.SCrypt;
 

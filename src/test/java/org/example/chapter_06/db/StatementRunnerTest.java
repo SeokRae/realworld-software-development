@@ -1,7 +1,7 @@
 package org.example.chapter_06.db;
 
-import org.example.chapter_06.Position;
-import org.example.chapter_06.User;
+import org.example.chapter_06.domain.Position;
+import org.example.chapter_06.domain.User;
 import org.junit.jupiter.api.*;
 
 import java.nio.charset.StandardCharsets;

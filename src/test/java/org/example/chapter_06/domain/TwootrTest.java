@@ -1,17 +1,22 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
 
 import org.example.chapter_06.memory.InMemoryTwootRepository;
 import org.example.chapter_06.memory.InMemoryUserRepository;
+import org.example.chapter_06.repository.TwootRepository;
+import org.example.chapter_06.repository.UserRepository;
+import org.example.chapter_06.domain.status.DeleteStatus;
+import org.example.chapter_06.domain.status.FollowStatus;
+import org.example.chapter_06.domain.status.RegistrationStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.example.chapter_06.FollowStatus.ALREADY_FOLLOWING;
-import static org.example.chapter_06.FollowStatus.SUCCESS;
-import static org.example.chapter_06.TestData.TWOOT;
-import static org.example.chapter_06.TestData.twootAt;
+import static org.example.chapter_06.domain.status.FollowStatus.ALREADY_FOLLOWING;
+import static org.example.chapter_06.domain.status.FollowStatus.SUCCESS;
+import static org.example.chapter_06.domain.TestData.TWOOT;
+import static org.example.chapter_06.domain.TestData.twootAt;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.mock;
@@ -111,7 +116,7 @@ class TwootrTest {
 		otherEndPoint.onSendTwoot(id, TWOOT);
 
 		verify(twootRepository).add(id, TestData.OTHER_USER_ID, TWOOT);
-		verify(receiverEndPoint).onTwoot(new Twoot(id, TestData.OTHER_USER_ID, TWOOT, new Position(0)));
+		verify(receiverEndPoint).onTwoot(Twoot.of(id, TestData.OTHER_USER_ID, TWOOT, new Position(0)));
 	}
 	// end::shouldReceiveTwootsFromFollowedUser[]
 
@@ -124,7 +129,7 @@ class TwootrTest {
 		final SenderEndPoint otherEndPoint = otherLogon();
 		otherEndPoint.onSendTwoot(id, TWOOT);
 
-		verify(receiverEndPoint, never()).onTwoot(new Twoot(id, TestData.OTHER_USER_ID, TWOOT, POSITION_1));
+		verify(receiverEndPoint, never()).onTwoot(Twoot.of(id, TestData.OTHER_USER_ID, TWOOT, POSITION_1));
 	}
 
 	// tag::shouldReceiveReplayOfTwootsAfterLogoff[]

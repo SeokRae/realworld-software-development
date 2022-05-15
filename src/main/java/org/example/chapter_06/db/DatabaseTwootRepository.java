@@ -1,9 +1,9 @@
 package org.example.chapter_06.db;
 
-import org.example.chapter_06.Position;
-import org.example.chapter_06.Twoot;
-import org.example.chapter_06.TwootQuery;
-import org.example.chapter_06.TwootRepository;
+import org.example.chapter_06.domain.Position;
+import org.example.chapter_06.domain.Twoot;
+import org.example.chapter_06.domain.TwootQuery;
+import org.example.chapter_06.repository.TwootRepository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -59,7 +59,7 @@ public class DatabaseTwootRepository implements TwootRepository {
 		var id = rs.getString(2);
 		var senderId = rs.getString(3);
 		var content = rs.getString(4);
-		return new Twoot(id, senderId, content, position);
+		return Twoot.of(id, senderId, content, position);
 	}
 
 	@Override
@@ -118,7 +118,7 @@ public class DatabaseTwootRepository implements TwootRepository {
 			}
 		});
 
-		return new Twoot(id, userId, content, position);
+		return Twoot.of(id, userId, content, position);
 	}
 
 	@Override

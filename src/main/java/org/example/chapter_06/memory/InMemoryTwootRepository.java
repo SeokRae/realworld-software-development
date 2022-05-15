@@ -1,9 +1,9 @@
 package org.example.chapter_06.memory;
 
-import org.example.chapter_06.Position;
-import org.example.chapter_06.Twoot;
-import org.example.chapter_06.TwootQuery;
-import org.example.chapter_06.TwootRepository;
+import org.example.chapter_06.domain.Position;
+import org.example.chapter_06.domain.Twoot;
+import org.example.chapter_06.domain.TwootQuery;
+import org.example.chapter_06.repository.TwootRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -70,7 +70,7 @@ public class InMemoryTwootRepository implements TwootRepository {
 		currentPosition = currentPosition.next();
 
 		var twootPosition = currentPosition;
-		var twoot = new Twoot(id, userId, content, twootPosition);
+		var twoot = Twoot.of(id, userId, content, twootPosition);
 		twoots.add(twoot);
 		return twoot;
 	}

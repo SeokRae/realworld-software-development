@@ -1,4 +1,4 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
 
 class TestData {
 	static final String USER_ID = "Joe";
@@ -13,6 +13,6 @@ class TestData {
 	static final String TWOOT_2 = "Bye World!";
 
 	static Twoot twootAt(final String id, final Position position) {
-		return new Twoot(id, OTHER_USER_ID, TWOOT, position);
+		return Twoot.of(id, OTHER_USER_ID, TWOOT, position);
 	}
 }

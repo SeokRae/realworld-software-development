@@ -1,4 +1,4 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
 
 // Value object representing the position in the stream
 // tag::Position[]

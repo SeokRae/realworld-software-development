@@ -1,4 +1,4 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
 
 import java.util.Objects;
 
@@ -9,7 +9,7 @@ public final class Twoot {
 	private final String content;
 	private final Position position;
 
-	public Twoot(final String id, final String senderId, final String content, final Position position) {
+	private Twoot(final String id, final String senderId, final String content, final Position position) {
 		Objects.requireNonNull(id, "id");
 		Objects.requireNonNull(senderId, "senderId");
 		Objects.requireNonNull(content, "content");
@@ -19,6 +19,10 @@ public final class Twoot {
 		this.position = position;
 		this.senderId = senderId;
 		this.content = content;
+	}
+
+	public static Twoot of(final String id, final String senderId, final String content, final Position position) {
+		return new Twoot(id, senderId, content, position);
 	}
 
 	public boolean isAfter(final Position otherPosition) {

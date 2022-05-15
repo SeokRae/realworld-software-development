@@ -1,9 +1,9 @@
 package org.example.chapter_06.memory;
 
 
-import org.example.chapter_06.FollowStatus;
-import org.example.chapter_06.User;
-import org.example.chapter_06.UserRepository;
+import org.example.chapter_06.domain.status.FollowStatus;
+import org.example.chapter_06.domain.User;
+import org.example.chapter_06.repository.UserRepository;
 
 import java.util.HashMap;
 import java.util.Map;
