@@ -1,4 +1,6 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
+
+import org.example.chapter_06.domain.Twoot;
 
 /**
  * Adapter interface for pushing information out to a UI port.

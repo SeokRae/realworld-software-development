@@ -1,12 +1,14 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
+
+import org.example.chapter_06.domain.status.FollowStatus;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import static org.example.chapter_06.FollowStatus.ALREADY_FOLLOWING;
-import static org.example.chapter_06.FollowStatus.SUCCESS;
+import static org.example.chapter_06.domain.status.FollowStatus.ALREADY_FOLLOWING;
+import static org.example.chapter_06.domain.status.FollowStatus.SUCCESS;
 
 public class User {
 	private final String id;
@@ -51,7 +53,6 @@ public class User {
 			lastSeenPosition = twoot.getPosition();
 			return true;
 		}
-
 		return false;
 	}
 

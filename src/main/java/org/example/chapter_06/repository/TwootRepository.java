@@ -1,4 +1,7 @@
-package org.example.chapter_06;
+package org.example.chapter_06.repository;
+
+import org.example.chapter_06.domain.Twoot;
+import org.example.chapter_06.domain.TwootQuery;
 
 import java.util.Optional;
 import java.util.function.Consumer;

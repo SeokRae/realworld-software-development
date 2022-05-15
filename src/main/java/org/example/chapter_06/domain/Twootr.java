@@ -1,12 +1,18 @@
-package org.example.chapter_06;
+package org.example.chapter_06.domain;
+
+import org.example.chapter_06.repository.TwootRepository;
+import org.example.chapter_06.repository.UserRepository;
+import org.example.chapter_06.domain.status.DeleteStatus;
+import org.example.chapter_06.domain.status.FollowStatus;
+import org.example.chapter_06.domain.status.RegistrationStatus;
 
 import java.util.Arrays;
 import java.util.Objects;
 import java.util.Optional;
 
-import static org.example.chapter_06.DeleteStatus.*;
-import static org.example.chapter_06.FollowStatus.INVALID_USER;
-import static org.example.chapter_06.Position.INITIAL_POSITION;
+import static org.example.chapter_06.domain.status.DeleteStatus.*;
+import static org.example.chapter_06.domain.status.FollowStatus.INVALID_USER;
+import static org.example.chapter_06.domain.Position.INITIAL_POSITION;
 
 public class Twootr {
 
